@@ -1,0 +1,12 @@
+<div class="dashboard-header row">
+  <h1><%= @dashboard.title %></h1>
+
+  <p id="notice"><%= notice %></p>
+
+  <%= link_to 'Edit', edit_dashboard_path(@dashboard) %> |
+  <%= link_to 'Back', dashboards_path %>
+</div>
+
+<div class="dashboard-content row">
+  <%= render_sir_trevor(@dashboard.content) %>
+</div>
