@@ -6,5 +6,9 @@ SirTrevor.Blocks.RssFeed = (function() {
     
     type: "rss_feed",
 
+    metadata: function() {
+      return this.text_field("url", "RSS/Atom URL");
+    },
+
   });
 })();

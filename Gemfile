@@ -48,3 +48,5 @@ gem 'sir-trevor-rails', github: 'sul-dlss/sir-trevor-rails'
 gem 'octokit'
 gem 'html-pipeline'
 gem 'github-markdown'
+
+gem 'feedjira'

@@ -1,0 +1,6 @@
+<div class="item feed-entry <%= 'active' if entry_counter == 0 %>">
+  <h4><%= link_to entry.title, entry.url %>
+    <small><%= time_ago_in_words entry.published %> ago</small>
+  </h4>
+  <p><%= sanitize entry.summary || entry.content %></p>
+</div>

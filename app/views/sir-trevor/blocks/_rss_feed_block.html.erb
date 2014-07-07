@@ -1,0 +1,10 @@
+<% feed = Feedjira::Feed.fetch_and_parse block['url'] %>
+<% id = SecureRandom.hex(6) %>
+<div class="well block feed-block col-md-4">
+  <h3 class="section-header"><%= feed.title %></h3>
+  <div id="<%= id %>" class="carousel slide">
+    <div class="carousel-inner">
+      <%= render partial: 'feed/entry', as: 'entry', collection: feed.entries %>
+    </div>
+  </div>
+</div>
