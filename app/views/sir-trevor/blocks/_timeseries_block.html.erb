@@ -1,0 +1,3 @@
+<div id="<%= block['id'] %>" class="block col-md-6 content-block timeseries-block" data-block-refresh="<%= 60.seconds.in_milliseconds %>">
+  <%= image_tag "http://sulstats-raw.stanford.edu/render/?width=586&height=308&lineWidth=3&bgcolor=111111&colors=1f77b4, ff7f0e, 2ca02c, d62728, 9467bd, 8c564b,e377c2, 7f7f7f, bcbd22, 17becf&fgcolor=f7f7f7&title=#{block["title"]}&#{block["metrics"].split("\n").map { |x| "target=#{x}" }.join("&")}&t=#{Time.now.to_i}", alt: " " %>
+</div>

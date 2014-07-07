@@ -11,7 +11,7 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1.json
   def show
   end
-
+  
   # GET /dashboards/new
   def new
     @dashboard = Dashboard.new
