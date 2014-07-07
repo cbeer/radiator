@@ -1,0 +1,6 @@
+<div id="<%= event[:id] %>" class="block well col-md-4 github-event github-event-<%= event[:type] %>"
+  <%= render_github_event_payload event %>
+  <pre style="display: none">
+    <%= event.inspect %>
+  </pre>
+</div>

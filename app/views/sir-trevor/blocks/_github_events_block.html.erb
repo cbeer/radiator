@@ -1,0 +1,4 @@
+<% github = Blocks::GithubBlock.new(block) %>
+<div class="block col-md-4 github-block" data-block-id="<%= block['id'] %>" data-block-refresh="1m">
+  <%= render partial: 'github/event', as: 'event', collection: github.events %>
+</div>

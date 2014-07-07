@@ -1,0 +1,11 @@
+<h4>
+  <%= link_to event[:actor][:login], "https://github.com/#{event[:actor][:login]}" %>
+  deleted 
+  <%= event[:payload][:ref_type] %>
+  <%= event[:payload][:ref] %>
+  at  
+  <%= link_to "#{event[:repo][:name]}", "" %>
+  <small>
+    <%= time_ago_in_words event[:created_at] %> ago
+  </small>
+</h4>

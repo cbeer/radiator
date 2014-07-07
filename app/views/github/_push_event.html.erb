@@ -1,0 +1,22 @@
+<h4>
+  <%= link_to event[:actor][:login], "https://github.com/#{event[:actor][:login]}" %>
+  pushed to
+  <%= event[:payload][:ref] %>
+  at  
+  <%= link_to "#{event[:repo][:name]}", "" %>
+  <small>
+    <%= time_ago_in_words event[:created_at] %> ago
+  </small>
+</h4>
+
+<div class="row">
+  <%= image_tag event[:actor][:avatar_url], class: 'col-md-1' %>
+  <div class="col-md-11">
+    <dl class="dl-horizontal">
+      <% event[:payload][:commits].each do |c| %>
+        <dt><%= link_to c[:sha].slice(0,6), c[:url] %></dt>
+        <dd><%= c[:message] %></dd>
+      <% end %>
+    </dl>
+  </div>
+</div>

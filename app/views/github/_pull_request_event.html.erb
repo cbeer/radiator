@@ -1,0 +1,16 @@
+<h4>
+  <%= link_to event[:actor][:login], "https://github.com/#{event[:actor][:login]}" %>
+  opened pull request  
+  <%= link_to "#{event[:repo][:name]}##{event[:payload][:pull_request][:number]}", event[:payload][:pull_request][:html_url] %>
+  <small>
+    <%= time_ago_in_words event[:created_at] %> ago
+  </small>
+</h4>
+
+<div class="row">
+  <%= image_tag event[:actor][:avatar_url], class: 'col-md-1' %>
+  <div class="col-md-11">
+    <p><%= link_to event[:payload][:pull_request][:title], event[:payload][:pull_request][:html_url] %></p>
+    <p><%= render_github_body event[:payload][:pull_request][:body] %></p>
+  </div>
+</div>
