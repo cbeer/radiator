@@ -1,0 +1,5 @@
+<% netdb = Blocks::NetdbBlock.new(block) %>
+<div class="netdb-block" data-block-id="<%= block['id'] %>" data-block-refresh="1d">
+  <h3><%= netdb.host %></h3>
+  <%= netdb.profile %>
+</div>
