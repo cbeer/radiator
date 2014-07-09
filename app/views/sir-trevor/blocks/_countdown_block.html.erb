@@ -1,0 +1,15 @@
+<% dt = Chronic.parse(block["until"]) %>
+<div id="<%= block["id"] %>" class="block countdown-block col-md-3 text-center">
+  <h3><%= block["title"] %></h3> 
+  
+  <% case %>
+  <% when (Time.now + 1.day) > dt %>
+  <time class="countdown h1" datetime="<%= dt %>">
+    <%= distance_of_time_in_words_to_now dt %>
+  </time>
+  <% else %>
+  <div style="width: 100px; margin-left: auto; margin-right: auto;">
+    <%= render partial: 'calendar/date', object: dt %>
+  </div> 
+  <% end %>
+</div>

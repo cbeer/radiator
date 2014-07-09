@@ -52,3 +52,4 @@ gem 'github-markdown'
 gem 'feedjira'
 
 gem 'icalendar'
+gem 'chronic'

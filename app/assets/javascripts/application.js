@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require sir-trevor
+//= require moment.min
+//= require jquery.timer
 //= require_tree .

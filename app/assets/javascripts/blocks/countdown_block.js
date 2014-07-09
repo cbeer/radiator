@@ -7,5 +7,9 @@ SirTrevor.Blocks.Countdown = (function() {
     
     type: "countdown",
 
+
+    metadata: function() {
+      return this.text_field("title", "Title") + this.text_field("until", "Until");
+    },
   });
 })();
