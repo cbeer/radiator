@@ -7,7 +7,7 @@ SirTrevor.Blocks.Travis = (function() {
     type: "travis",
 
     metadata: function() {
-      return this.text_field("url", "Build URL");
+      return this.text_field("repo", "Repository") + this.text_field("branch", "Branch");
     },
 
   });

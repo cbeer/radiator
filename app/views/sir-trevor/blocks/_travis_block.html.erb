@@ -1,0 +1,21 @@
+<% travis = Blocks::TravisBlock.new block %>
+<% build = (travis.repo.branch(block["branch"]) unless block["branch"].blank?) || travis.repo.last_build %>
+<div class="block travis-block <%= "travis-block-#{build.color}" %> col-md-6"  data-block-id="<%= block['id'] %>" data-block-refresh="5m">
+  <div class="alert clearfix">
+    <%= image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest build.commit.author_email.downcase}", title: build.commit.author_name, class: 'col-md-3' %>
+    <div class="col-md-9">
+      <h3><%= link_to block["repo"], travis.url %></h3>
+      <h4>Build <%= build.state %>
+        <small>
+          <% if build.finished_at %>
+          <%= time_ago_in_words build.finished_at %> ago
+          <% end %>
+          (#<%= build.number %>)
+        </small>
+      </h4>
+      
+    </div>
+    
+    <p class="col-md-12"><%= build.commit.subject %></p>
+  </div>
+</div>
