@@ -50,3 +50,5 @@ gem 'html-pipeline'
 gem 'github-markdown'
 
 gem 'feedjira'
+
+gem 'icalendar'

@@ -1,0 +1,14 @@
+<div id="<%= event.uid %>" class="event well col-md-12 clearfix">
+  <div class="col-md-3 hidden-sm hidden-xs">
+    <%= render partial: 'calendar/date', object: event.dtstart %>
+    <address><%= event.location %></address>
+  </div>
+  
+  <div class="col-md-9 col-sm-12">
+    <h3><%= link_to event.summary, event.url.to_s %>
+      <small><%= distance_of_time_in_words_to_now event.dtstart %></small>
+    </h3>
+    <address class="hidden-lg hidden-md"><%= event.location %></address>
+    <p><%= sanitize event.description %></p>
+  </div>
+</div>

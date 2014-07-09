@@ -1,0 +1,9 @@
+<time class="calendar-date" datetime="<%= date %>">
+  <span class="month">
+    <%= date.strftime("%b") %>
+  </span>
+  
+  <span class="date">
+    <%= date.strftime("%d").sub(/^0/, '') %>
+  </span>
+</time>

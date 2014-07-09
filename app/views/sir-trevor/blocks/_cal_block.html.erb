@@ -1,0 +1,4 @@
+<% cal = Blocks::CalendarBlock.new(block) %>
+<div class="block calendar-block col-md-6" data-block-id="<%= block['id'] %>" data-block-refresh="15m">
+  <%= render partial: 'calendar/event', as: 'event', collection: cal.events.select { |x| x.dtstart > Time.now } %>
+</div>

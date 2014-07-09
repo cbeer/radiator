@@ -31,6 +31,56 @@ body { padding-top: 75px; }
   padding-bottom: 1em;
 }
 
+.st-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: $panel-info-heading-bg;
+  padding: 3px 8px;
+  color: $panel-info-text;
+  font-weight: bold;
+}
+
+.st-block__inner:hover {
+  .st-title {
+    display: block;
+  }
+}
+
+.travis-block-red .alert {
+  @extend .alert-danger;
+}
+
+.travis-block-yellow .alert {
+  @extend .alert-warning;
+}
+
+.travis-block-green .alert {
+  @extend .alert-success;
+}
+
+.travis-block h4 small {
+  display: block;
+}
+
+.gemnasium-block-red .btn {
+  @extend .btn-danger;
+}
+
+.gemnasium-block-yellow .btn {
+  @extend .btn-warning;
+}
+
+.gemnasium-block-green .btn {
+  @extend .btn-success;
+}
+
+.gutter-sizer {
+  width: $grid-gutter-width;
+  height: $grid-gutter-width;
+}
+
 .calendar-date {
   margin-top: $line-height-computed;
   width: $line-height-computed * 5;
