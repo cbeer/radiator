@@ -1,0 +1,32 @@
+<% gemnasium = Blocks::GemnasiumBlock.new block %>
+<% if gemnasium.project["name"].present? %>
+<div class="block gemnasium-block <%= "gemnasium-block-#{gemnasium.project["color"]}" %>"  data-block-id="<%= block['id'] %>" data-block-refresh="1d">
+  <a href="<%= gemnasium.url %>" class="btn btn-lg">
+    <h3><%= gemnasium.project["name"] %></h3>
+    
+    <% unless gemnasium.alerts.empty? %>
+    <h4>Alerts</h4>
+    <ul class="list-unstyled">
+      <% gemnasium.alerts.select { |x| x['advisory'] and x['advisory']['title'].present? }.each do |alert| %>
+      <li>
+        <%= alert['advisory']['title'] %>
+        <small>
+          <%= time_ago_in_words Time.parse(alert['open_at']) %> ago
+        </small>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+    
+    <% if gemnasium.alerts.empty? and not gemnasium.dependencies.empty? %>
+    <h4>Dependencies</h4>
+
+    <ul class="list-unstyled">
+      <% gemnasium.dependencies.select { |x| x['first_level'] && x['color'] != 'green' }.each do |gem| %>
+        <li><%= gem['package']['name'] %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </a>
+</div>
+<% end %>

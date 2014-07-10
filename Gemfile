@@ -56,3 +56,6 @@ gem 'icalendar'
 gem 'chronic'
 
 gem 'travis'
+
+gem 'faraday'
+gem 'faraday_middleware'
