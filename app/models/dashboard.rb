@@ -21,4 +21,8 @@ class Dashboard < ActiveRecord::Base
       content_hash["data"]
     end
   end
+  
+  def widget id
+    content_hash["data"].select { |x| x['data']['id'] == id }.first
+  end
 end

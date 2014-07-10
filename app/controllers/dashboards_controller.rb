@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
+  before_action :set_dashboard, only: [:show, :show_widget, :edit, :update, :destroy]
 
   # GET /dashboards
   # GET /dashboards.json
@@ -11,6 +11,14 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1
   # GET /dashboards/1.json
   def show
+  end
+  
+  def show_widget
+    @widget_id = params[:widget_id]
+    respond_to do |format|
+      format.html { }
+      format.js { render text: view_context.render_sir_trevor_block(@dashboard.widget(@widget_id)) }
+    end
   end
   
   # GET /dashboards/new

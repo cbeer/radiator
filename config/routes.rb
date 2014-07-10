@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboards#index'
   
-  resources :dashboards
+  resources :dashboards do
+    member do
+      get 'widget/:widget_id' => 'dashboards#show_widget'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

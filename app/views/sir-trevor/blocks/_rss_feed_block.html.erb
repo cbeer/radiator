@@ -1,8 +1,8 @@
 <% feed = Feedjira::Feed.fetch_and_parse block['url'] %>
 <% id = SecureRandom.hex(6) %>
-<div class="well block feed-block col-md-4">
+<div id="<%= block['id'] %>" class="well block feed-block col-md-4" data-block-refresh="<%= 15.minutes.in_milliseconds %>">
   <h3 class="section-header"><%= feed.title %></h3>
-  <div id="<%= id %>" class="carousel slide">
+  <div id="<%= id %>" class="carousel slide" data-interval="<%= 1.minute.in_milliseconds %>">
     <div class="carousel-inner">
       <%= render partial: 'feed/entry', as: 'entry', collection: feed.entries %>
     </div>

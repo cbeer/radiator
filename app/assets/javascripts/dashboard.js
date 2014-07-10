@@ -72,6 +72,22 @@ $(function(){
     timer.set({ time : 60000, autostart : true });
     update_sparkfun_widgets();
 
+    $("[id][data-block-refresh]").each(function() {
+      var id = this.id;
+      var refreshIt = function() {
+        $.get(location.pathname + "/widget/" + id + ".js", {}, function(data) {      
+          $("#" + id).replaceWith(data);
+          $("#" + id).find('.carousel').carousel();
+        }, 'html');
+      }
+      
+      var time = parseInt($(this).attr('data-block-refresh'));
+      
+      if (time != 0) {
+        var timer = $.timer(refreshIt);
+        timer.set({time: time, autostart: true});
+      }
+    });
   });
   
 });
