@@ -6,5 +6,7 @@ module SirTrevorOverrideHelper
            :block => object['data'],
            :object => object,
            :image_type => image_type) if object.has_key?("data")
+    rescue => err
+      err.inspect
   end
 end
