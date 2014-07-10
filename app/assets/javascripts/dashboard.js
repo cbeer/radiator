@@ -36,15 +36,42 @@ $(function(){
     timer.set({ time : 1000, autostart : true });
     update_timer_widget();
     
-    var $container = $('.autopacked-container');
-      // init
-      $container.packery({
-        itemSelector: '.block',
-        columnWidth: 15,
-        gutter: 15,
-        rowHeight: 60
+    var update_sparkfun_widgets = function() {
+      $('.sparkfun-block .value').each(function() {
+        var that = $(this);
+        $.ajax({
+          url: $(this).data('source'),
+          jsonp: 'callback',
+          cache: true,
+          dataType: 'jsonp',
+          data: {
+            page: 1
+          },
+          success: function(response) {
+            // response will be a javascript
+            // array of objects
+            var dl = $('<dl>');
+            dl.addClass('dl-horizontal');
+            
+            Object.keys(response[0]).forEach(function (key) { 
+              if (key == "timestamp") {
+                return;
+              }
+              var value = response[0][key]
+              dl.append($('<dt>').text(key));
+              dl.append($('<dd>').text(value));
+            });
+            
+            that.html(dl);
+          }
+        });
       });
-      
+    }
+    var sparkfun_timer = $.timer(update_sparkfun_widgets);
+    
+    timer.set({ time : 60000, autostart : true });
+    update_sparkfun_widgets();
+
   });
   
 });
