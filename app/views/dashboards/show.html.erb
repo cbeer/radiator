@@ -1,10 +1,5 @@
-<div class="dashboard-header row">
-  <h1><%= @dashboard.title %></h1>
-
-  <p id="notice"><%= notice %></p>
-
-  <%= link_to 'Edit', edit_dashboard_path(@dashboard) %> |
-  <%= link_to 'Back', dashboards_path %>
+<div class="dashboard-header row text-right">
+  <%= link_to 'Edit', edit_dashboard_path(@dashboard), class: 'btn btn-primary' %>
 </div>
 
 <div class="dashboard-content autopacked-container">

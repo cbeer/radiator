@@ -1,0 +1,7 @@
+<ul class="nav navbar-nav">
+<% Dashboard.find_each do |d| %>
+  <%= content_tag :li, class: "#{'active' if current_page? d or d == @dashboard }" do %>
+    <%= link_to d.title, d %>
+  <% end %>
+<% end %>
+</ul>

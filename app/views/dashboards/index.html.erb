@@ -1,7 +1,7 @@
 <div class="row">
-<%= render @dashboards %>
+<%= link_to 'New Dashboard', new_dashboard_path, class: 'btn btn-primary' %>
 </div>
 
 <div class="row">
-<%= link_to 'New Dashboard', new_dashboard_path %>
+<%= render @dashboards %>
 </div>

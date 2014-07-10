@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
+    @preview = true
   end
 
   # GET /dashboards/1
