@@ -16,14 +16,14 @@
  *= require sir-trevor
  */
  
-@import "bootswatch/darkly/variables";
+@import "bootswatch/cyborg/variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 // Bootstrap body padding for fixed navbar
 body { padding-top: 75px; }
 
-@import "bootswatch/darkly/bootswatch";
+@import "bootswatch/cyborg/bootswatch";
 
 .github-event, .feed-entry {
   border-bottom: 1px solid #ccc;
