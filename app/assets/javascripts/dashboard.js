@@ -30,23 +30,23 @@ $(function(){
         }
       });
     };
-    
+
     var timer = $.timer(update_timer_widget);
     
     timer.set({ time : 1000, autostart : true });
     update_timer_widget();
     
-    // 
-    // var $container = $('.autopacked-container');
-    //   // init
-    //   $container.packery({
-    //     itemSelector: '.block',
-    //     columnWidth: 15,
-    //     gutter: 15,
-    //     rowHeight: 60
-    //   });
-
+    var $container = $('.autopacked-container');
+      // init
+      $container.packery({
+        itemSelector: '.block',
+        columnWidth: 15,
+        gutter: 15,
+        rowHeight: 60
+      });
+      
   });
+  
 });
 
 

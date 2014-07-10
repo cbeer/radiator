@@ -150,3 +150,8 @@ body { padding-top: 75px; }
 .travis-block h4 small {
   display: block;
 }
+
+.gutter-sizer {
+  width: $grid-gutter-width;
+  height: $grid-gutter-width;
+}

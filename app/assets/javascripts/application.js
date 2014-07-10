@@ -17,4 +17,5 @@
 //= require sir-trevor
 //= require moment.min
 //= require jquery.timer
+//= require packery.pkgd.min
 //= require_tree .

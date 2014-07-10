@@ -7,6 +7,8 @@
   <%= link_to 'Back', dashboards_path %>
 </div>
 
-<div class="dashboard-content row">
+<div class="dashboard-content autopacked-container">
   <%= render_sir_trevor(@dashboard.content) %>
+  <div class="grid-sizer col-md-2"></div>
+  <div class="gutter-sizer"></div>
 </div>

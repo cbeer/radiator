@@ -1,5 +1,5 @@
 <% huginn = Blocks::HuginnBlock.new(block) %>
-<div class="huginn-block" data-block-id="<%= block['id'] %>" data-block-refresh="1d">
+<div class="block huginn-block" data-block-id="<%= block['id'] %>" data-block-refresh="1d">
   <h3><%= block["title"] %></h3>
   <%= huginn.payload %>
 </div>
