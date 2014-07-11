@@ -1,4 +1,10 @@
-<div class="block content-block graphite-block value-block">
-  <div class="value"><%= block["metrics"] %></div>
-  <h3><%= block["title"] %></h3>
+<% metric = Blocks::GraphiteBlock.new block %>
+<% v = metric.last_value %>
+<div id="<%= block['id'] %>" class="block col-md-3 content-block graphite-block value-block" data-block-refresh="<%= 30.seconds.in_milliseconds %>">
+  
+  <div class="text-center alert alert-info <%= 'alert-warning' if v > metric.warning_value %> <%= 'alert-danger' if v > metric.error_value %>">
+    <h3 class="section-header"><%= block["title"] %></h3>
+    <span class="value h1"><%= v %></span>
+    
+  </div>
 </div>

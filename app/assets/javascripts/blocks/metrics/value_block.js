@@ -8,9 +8,9 @@ SirTrevor.Blocks.Value = (function() {
     type: "value",
 
     sidebar: function() {
-        return text_field("min", "Minimum") + 
-            text_field("warn", "Warning") + 
-            text_field("err", "Error");
+        return this.text_field("min", "Minimum") + 
+            this.text_field("warn", "Warning") + 
+            this.text_field("err", "Error");
     }
   });
 })();
