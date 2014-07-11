@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get 'widget/:widget_id' => 'dashboards#show_widget'
     end
   end
+  
+  post 'widgets' => 'widgets#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

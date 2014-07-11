@@ -155,3 +155,10 @@ body { padding-top: 75px; }
   width: $grid-gutter-width;
   height: $grid-gutter-width;
 }
+
+.preview-btn, .preview-exit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+}

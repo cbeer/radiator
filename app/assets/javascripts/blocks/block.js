@@ -8,6 +8,33 @@
       return this.blockID + "_" + id;
     },
     onBlockRender: function() {
+      var that = this;
+      console.log(that);
+      this.$inner.on('click', '.preview-btn', function(event) {
+        event.stopPropagation();
+        var preview_btn = $(this);
+        preview_btn.attr('disabled', 'disabled');
+        
+        that.saveAndGetData();
+
+        $.post('/widgets', 
+          {widget: JSON.stringify(that.blockStorage) }, 
+          function(d) { 
+            var btn = $('<button class="btn btn-success preview-exit-btn">Edit</button>').click(function(event) {
+              event.stopPropagation();
+              that.$inner.show();
+              $(this).closest('.preview').remove();
+              preview_btn.removeAttr('disabled');
+            });
+            
+            $('<div class="preview clearfix st-block__inner">').append(d).append(btn).insertAfter(that.$inner);
+            that.$inner.hide();
+          }
+        );
+        
+        return false;
+      });
+      
     },
     
     template: function() { 
@@ -23,7 +50,9 @@
         '<div class="col-sm-3">',
           this.sidebar(),
         '</div>',
-      '</div>'
+      '</div>',
+      
+      '<button class="btn btn-info preview-btn">Preview</button>'
       ].join("\n"))(this);
     },
     
