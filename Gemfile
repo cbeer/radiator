@@ -59,3 +59,5 @@ gem 'travis'
 
 gem 'faraday'
 gem 'faraday_middleware'
+
+gem 'ruby-oembed'

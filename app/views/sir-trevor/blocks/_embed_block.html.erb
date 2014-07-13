@@ -1,0 +1,13 @@
+<% embed = Blocks::EmbedBlock.new(block) %>
+<% cache("oembed_#{embed.url}") do %>
+<div class="block embed-block col-md-6" data-block-id="<%= block['id'] %>" data-block-refresh="<%= 1.day.in_milliseconds %>">
+  <% begin %>
+    <%= raw embed.html.html_safe %>
+  <% rescue OEmbed::NotFound => err%>
+    <%= link_to embed.url, embed.url %>
+      <pre><%= err.inspect %></pre>
+  <% rescue => err %>
+    <pre><%= err.inspect %></pre>
+  <% end %>
+</div>
+<% end %>
