@@ -9,7 +9,6 @@
     },
     onBlockRender: function() {
       var that = this;
-      console.log(that);
       this.$inner.on('click', '.preview-btn', function(event) {
         event.stopPropagation();
         var preview_btn = $(this);
