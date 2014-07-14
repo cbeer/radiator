@@ -7,6 +7,7 @@ module SirTrevorOverrideHelper
            :object => object,
            :image_type => image_type) if object.has_key?("data")
     rescue => err
-      err.inspect
+      content_tag :pre, object.inspect + err.inspect
+      Rails.logger.warn err
   end
 end
