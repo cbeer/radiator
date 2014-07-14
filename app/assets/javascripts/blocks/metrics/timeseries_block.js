@@ -7,5 +7,8 @@ SirTrevor.Blocks.Timeseries = (function() {
     
     type: "timeseries",
 
+    sidebar: function() {
+        return this.text_field("from", "From");
+    }
   });
 })();
