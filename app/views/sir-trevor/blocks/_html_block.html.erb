@@ -1,0 +1,3 @@
+<div class="block html-block"  id="<%= block['id'] %>" data-block-refresh="<%= ((block['refresh'].to_i if block['refresh'].present?) || 180).minutes.in_milliseconds %>">
+  <%= raw block['html'] %>
+</div>
