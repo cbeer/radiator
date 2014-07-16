@@ -18,4 +18,6 @@
 //= require moment.min
 //= require jquery.timer
 //= require packery.pkgd.min
+//= require platform/platform
+//= require polymer/polymer
 //= require_tree .
